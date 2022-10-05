@@ -1,0 +1,36 @@
+<%- include('templates/headeradmin')-%>
+
+	<div class="container edit-berita">
+		<form method="POST" action="/editberita/<%=data.id %>">
+			<div class="mb-3">
+				<label for="Url Gambar" class="form-label">Url Gambar Header</label>
+				<input type="text" class="form-control" value="<%=data.urlGambar %>" name="urlGambar" id="urlGambar"
+					placeholder="Url Gambar">
+			</div>
+			<div class="mb-3">
+				<label for="Judul Berita" class="form-label">Judul Berita</label>
+				<input type="text" class="form-control" value="<%=data.judulBerita %>" name="judulBerita"
+					id="judulBerita" placeholder="Judul Berita">
+			</div>
+			<div class="mb-3">
+				<label for="exampleFormControlTextarea1" class="form-label">Paragraph 1</label>
+				<textarea class="form-control" value="<%=data.isiBerita1 %>" name="isiBerita1" id="isiBerita1"
+					rows="3"></textarea>
+			</div>
+			<div class="mb-3">
+				<label for="exampleFormControlTextarea1" class="form-label">Paragraph 2</label>
+				<textarea class="form-control" value="<%=data.isiBerita2 %>" name="isiBerita2" id="isiBerita2"
+					rows="3"></textarea>
+			</div>
+			<div class="mb-3">
+				<label for="exampleFormControlTextarea1" class="form-label">Paragraph 2</label>
+				<textarea class="form-control" value="<%=data.isiBerita3 %>" name="isiBerita3" id="isiBerita3"
+					rows="3"></textarea>
+			</div>
+			<button type="submit" class="btn btn-primary btn-all">Simpan</button> &nbsp;
+			<a href="/daftarberita" class="btn btn-danger btn-all">
+				Cancel</a>
+		</form>
+	</div>
+
+	<%- include('templates/footer')-%>

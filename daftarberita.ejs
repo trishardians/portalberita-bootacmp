@@ -1,0 +1,44 @@
+<%- include('templates/headeradmin')-%>
+
+
+
+	<div class="container daftar-berita">
+		<a href="/addnews" class="btn btn-primary addnews">
+			Tambah Berita +</a>
+		<div class="edittable">
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th scope="col">ID</th>
+						<th scope="col">Judul Berita</th>
+						<th scope="col">Edit & Delete</th>
+					</tr>
+				</thead>
+				<tbody>
+					<%data.forEach(function(item) {%>
+						<tr>
+							<th class="id-table" scope="row">
+								<%=item.id%>
+							</th>
+							<td class="content">
+								<%=item.judulBerita%>
+							</td>
+							<td>
+								<a href="/editberita?id=<%=item.id%>" class="btn btn-primary edit-btn">
+									Edit</a>
+								&nbsp;
+								<a href="/deleteberita/<%=item.id%>" class="btn btn-danger edit-btn">
+									Delete</a>
+							</td>
+						</tr>
+						<%});%>
+
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+
+
+
+	<%- include('templates/footer')-%>
