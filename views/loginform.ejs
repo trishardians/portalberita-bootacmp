@@ -1,0 +1,92 @@
+<html lang="en" dir="ltr">
+
+<head>
+	<meta charset="utf-8">
+	<title>DEMAK MERDEKA</title>
+	<link href="/stylesheets/login.css" rel="stylesheet">
+	<link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+	<div class="container">
+		<header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+			<a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+				<svg class="bi me-2" width="40" height="32">
+					<use xlink:href="#bootstrap" />
+				</svg>
+				<span class="fs-4">Demak Merdeka</span>
+			</a>
+
+			<ul class="nav nav-pills">
+				<li class="nav-item"><a href="/" class="nav-link active" aria-current="page">Home</a></li>
+				&nbsp;
+				&nbsp;
+				<li class="nav-item"><a href="/login" class="nav-link" aria-current="page">Login</a></li>
+				&nbsp;
+				&nbsp;
+				<li class="nav-item"><a href="/daftarberita" class="nav-link" aria-current="page">Daftar Berita</a></li>
+			</ul>
+		</header>
+	</div>
+
+
+	<div class="wrapper">
+		<div class="title-text">
+			<div class="title login">
+				Login Form
+			</div>
+		</div>
+		<div class="form-container">
+			<div class="form-inner">
+				<form method="POST" action="/login" class="login">
+					<div class="field">
+						<input type="text" placeholder="email" id="email" name="email" required>
+					</div>
+					<div class="field">
+						<input type="password" placeholder="Password" id="password" name="password" required>
+					</div>
+					<div class="field btn">
+						<div class="btn-layer"></div>
+						<input type="submit" value="Login">
+					</div>
+					<div class="signup-link">
+						Not a member? <a href="/register">Signup now</a>
+					</div>
+				</form>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<footer class="footer mt-auto py-3 bg-white">
+		<div class="container">
+			<span class="text-muted">&copy; 2022. RACHMAT TRISHARDIAN.</span>
+		</div>
+	</footer>
+
+
+	<script>
+		const loginText = document.querySelector(".title-text .login");
+		const loginForm = document.querySelector("form.login");
+		const loginBtn = document.querySelector("label.login");
+		const signupBtn = document.querySelector("label.signup");
+		const signupLink = document.querySelector("form .signup-link a");
+		signupBtn.onclick = (() => {
+			loginForm.style.marginLeft = "-50%";
+			loginText.style.marginLeft = "-50%";
+		});
+		loginBtn.onclick = (() => {
+			loginForm.style.marginLeft = "0%";
+			loginText.style.marginLeft = "0%";
+		});
+		signupLink.onclick = (() => {
+			signupBtn.click();
+			return false;
+		});
+	</script>
+
+</body>
+
+</html>
